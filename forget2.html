@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<script src="asset/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="lp-header lp-bar bg-theme">
+		<a class="lp-back fa fa-angle-left fl"></a>
+		<h1 class="title">忘记支付密码</h1>
+	</div>
+	<div class="lp-content">
+		<form action="" method="post">
+			<div class="lp-card pd20">
+				<div class="mb10">
+					<div class="ellipsis">
+							手机号码：
+					</div>
+					<input type="text" class="input" placeholder="请输入您的手机号" />
+				</div>
+				<div class="mb10">
+					<div class="ellipsis">
+							验证码：
+					</div>
+					<div class="input-group ">
+						<input type="text" class="input" placeholder="请输入验证码" />
+						<div class="input-group-btn pd0">
+							<button class="btn btn-info" type="button" onclick="getCode()">获取验证码</button>
+						</div>
+					</div>
+				</div>
+				<div class="mb10">
+					<div class="ellipsis">
+							新支付密码：
+					</div>
+					<input type="password" class="input" placeholder="请输入新支付密码" />
+				</div>
+				<div class="mb10">
+					<div class="ellipsis">
+							确认支付新密码：
+					</div>
+					<input type="password" class="input" placeholder="请再次输入新支付密码" />
+				</div>
+				
+			</div>
+			<div class="mg10 mt30">
+				<button class="btn btn-pink btn-sub fill-block">确 认</button>
+			</div>
+
+		</form>
+	</div>
+	<script type="text/javascript">
+		function getCode(e) {
+			var event = e || window.event;
+			var oCode = event.target;
+			var count = 60;
+			oCode.disabled = true;
+			
+			return function (){
+				var timer = setInterval(function () {
+					count--;
+					oCode.innerHTML = "重新获取(" + count + ")";
+					if(count <= 0){
+						clearInterval(timer);
+						oCode.disabled = false;
+						oCode.innerHTML = "重新获取";
+					}
+
+				},1000)
+			}()
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<script src="asset/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="asset/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="lp-header bg-theme">
+		<a class="lp-back fa fa-angle-left fl"></a>
+		<h1 class="title">个人中心</h1>
+	</div>
+	<div class="lp-content ">
+		<div class="person-box bg-theme pt50 pb15 mb10">
+			<div class="person-avatar mb10">
+				<img src="img/logo.png" alt="" class="person-img" />
+				<div class="person-text pt10">
+					<p class="ellipsis">小刘真的帅</p>
+					<p class="ellipsis">1800000000</p>
+				</div>
+			</div>
+		</div>
+		<div class="mt10 section-o">
+			<ul class="lp-cells lp-list-ul un-border">
+				<li class="lp-cells__item ">
+					<a href="change-name.html" class="fa fa-angle-right pd10 ">
+						<span class="flex-justify">
+							<p class="ellipsis"><i class="iconfont icon-userName mr5 fs24"></i><span>昵称</span></p>
+							<span class="f-Gray">小刘真的帅</span>
+						</span>
+					</a>
+				</li>
+				<li class="lp-cells__item ">
+					<a href="#" class="fa fa-angle-right pd10 " model-data="#changeLang">
+						<span class="flex-justify">
+							<p class="ellipsis"><i class="iconfont icon-lang mr5 fs24"></i><span>语言</span></p>
+							<span class="f-Gray">中文</span>
+						</span>
+					</a>
+				</li>
+				<li class="lp-cells__item ">
+					<a href="change-bankCord.html" class="fa fa-angle-right pd10 ">
+						<span class="flex-justify">
+							<p class="ellipsis"><i class="iconfont icon-bankCard mr5 fs24"></i><span>我的银行卡</span></p>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="mt10 section-o">
+			<ul class="lp-cells lp-list-ul un-border">
+				<li class="lp-cells__item ">
+					<a href="change-password.html" class="fa fa-angle-right pd10 ">
+						<span class="flex-justify">
+							<p class="ellipsis"><i class="iconfont icon-change mr5 fs24"></i><span>登陆密码</span></p>
+							<span class="f-Gray">点击修改</span>
+						</span>
+					</a>
+				</li>
+				<li class="lp-cells__item ">
+					<a href="change-password2.html" class="fa fa-angle-right pd10 ">
+						<span class="flex-justify">
+							<p class="ellipsis"><i class="iconfont icon-password2 mr5 fs24"></i><span>支付密码</span></p>
+							<span class="f-Gray">点击修改</span>
+						</span>
+					</a>
+				</li>
+				<li class="lp-cells__item ">
+					<a  class="fa fa-angle-right pd10 " onclick="layer.msg('当前版本：V1.10',{offset:'80%'})">
+						<span class="flex-justify">
+							<p class="ellipsis"><i class="iconfont icon-info mr5 fs24"></i><span>版本</span></p>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container" id="changeLang">
+        <div class="dialog ">
+        	<div class="dialog-head bg-theme pd10">
+        		<button class="btn-close fr close">X</button>
+        		<p class="ellipsis">选择语音</p>
+        	</div>
+        	<div class="content pd10">
+        		 <div class="changeLangMenu">
+					<label class="lang-item">
+						<input type="radio" name="lang" class="hidden" checked />
+						<span class="changestate">
+							<i class="iconfont icon-complete f-blue fr"></i>中文
+						</span>
+					</label>
+					<label class="lang-item" onclick="layer.msg('你当前所在地区为(中国),为您推荐语言(中文)',{offset:'80%'})">
+						<input type="radio" name="lang" class="hidden" disabled />
+						<span class="changestate">
+							<i class="iconfont icon-complete f-blue fr"></i>English
+						</span>
+					</label>
+				</div>
+        	</div>
+        </div>
+    </div>
+
+</body>
+</html>

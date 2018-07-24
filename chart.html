@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<script src="asset/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="asset/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="lp-header bg-theme">
+		<a class="lp-back fa fa-angle-left fl"></a>
+		<h1 class="title">ATS</h1>
+	</div>
+	<div class="lp-content ">
+		<div class="bg-theme chart-header">
+			<div class="flex pcol10">
+				<div class="flex-item">
+					<p class="ellipsis">111.5600</p>
+					<p class="ellipsis">EP余额</p>
+				</div>
+				<div class="flex-item">
+					<p class="ellipsis">111.5600</p>
+					<p class="ellipsis">EP余额</p>
+				</div>
+			</div>
+		</div>		
+		<div class="section border-b">
+			<div class="flex-justify pd10">
+				<p class="ellipsis">当前价格：0.111</p>
+				<p class="ellipsis">高：0.111 <i class="iconfont icon-toTop f-green"></i></p>
+				<p class="ellipsis">低：0.111 <i class="iconfont icon-toDown f-red"></i></p>
+			</div>
+		</div>
+		<div class="section-o pt15 pb10 mb10">
+			<div class="flex tc">
+				<a href="pushOrder.html" class="flex-item pd5">
+					<i class="iconfont icon-sell fs28"></i>
+					<p class="ellipsis">出售订单</p>
+				</a>
+				<a href="pullOrder.html" class="flex-item pd5">
+					<i class="iconfont icon-buy fs28"></i>
+					<p class="ellipsis">购买订单</p>
+				</a>
+				<a href="#" class="flex-item pd5">
+					<i class="iconfont icon-order fs28"></i>
+					<p class="ellipsis">订单详情</p>
+				</a>
+				<a href="#" class="flex-item pd5">
+					<i class="iconfont icon-trade-center fs28"></i>
+					<p class="ellipsis">交易记录</p>
+				</a>
+			</div>
+		</div>
+		<div class="section-o mb10">
+			<div class="chart-bar tab-bar">
+				<div class=" flex tab-hd">
+					<div class="tab-hd-item flex-item cur ">5分钟</div>
+					<div class="tab-hd-item flex-item ">5小时</div>
+					<div class="tab-hd-item flex-item ">日线</div>
+				</div>
+				<ul class="tab-bd pd10">
+					<li class="tab-item ">
+						<div  id="container1" style="min-width:100%;height:200px;" ></div>
+					</li>
+					<li class="tab-item ">
+						<div  id="container2" style="min-width:100%;height:200px;" ></div>
+					</li>
+					<li class="tab-item">
+						<div  id="container3" style="min-width:100%;height:200px;" ></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="section">
+			<div class="tab-bar chart-bar">
+				<div class="tab-hd flex">
+					<div class="flex-item tab-hd-item cur">现金购买</div>
+					<div class="flex-item tab-hd-item">现金出售</div>
+				</div>
+				<div class="tab-bd">
+					<div class="tab-item fs12">
+						<ul class="trade-list pd10">
+							<li class="trade-list-item pd12">
+								<div class="flex-justify">
+									<div class="layout-main">
+										<div class="flex-justify">
+											<img src="img/logo.png" alt="" class="layout-img" />
+											<div class="layout-text">
+												<p class="ellipsis layout-name">小刘真的帅</p>
+												<p class=" ellipsis"><span class="fs10 f-Gray">限额 20.00</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="layout-pendant">
+										<p class="ellipsis tc">$ 0.796</p>
+										<button class="btn btn-green  btn-tag btn-buyOrder">买入</button>
+									</div>
+								</div>
+							</li>
+							<li class="trade-list-item pd12">
+								<div class="flex-justify">
+									<div class="layout-main">
+										<div class="flex-justify">
+											<img src="img/logo.png" alt="" class="layout-img" />
+											<div class="layout-text">
+												<p class=" layout-name">小刘真的帅</p>
+												<p class=" ellipsis"><span class="fs10 f-Gray">限额 20.00</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="layout-pendant">
+										<p class="ellipsis tc">$ 0.796</p>
+										<button class="btn btn-green  btn-tag btn-buyOrder">买入</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-item fs12">
+						<ul class="trade-list pd10">
+							<li class="trade-list-item pd12">
+								<div class="flex-justify">
+									<div class="layout-main">
+										<div class="flex-justify">
+											<img src="img/logo.png" alt="" class="layout-img" />
+											<div class="layout-text">
+												<p class="ellipsis layout-name">小刘真的帅</p>
+												<p class=" ellipsis"><span class="fs10 f-Gray">限额 20.00</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="layout-pendant">
+										<p class="ellipsis tc layout-name">$ 0.796</p>
+										<button class="btn btn-pink btn-tag  ">卖出</button>
+									</div>
+								</div>
+							</li>
+							<li class="trade-list-item pd12">
+								<div class="flex-justify">
+									<div class="layout-main">
+										<div class="flex-justify">
+											<img src="img/logo.png" alt="" class="layout-img" />
+											<div class="layout-text">
+												<p class="ellipsis">小刘真的帅</p>
+												<p class=" ellipsis"><span class="fs10 f-Gray">限额 20.00</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="layout-pendant">
+										<p class="ellipsis tc">$ 0.796</p>
+										<button class="btn btn-pink btn-tag">卖出</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		//购买弹窗
+		var layerCont = `
+			<form action="" method="post" class="prow20 pcol10">
+				<div class="input-group un-border-group">
+					<span class="input-group-addon pd0 len-5 tr f-Gray">
+						限额：
+					</span>
+					<input type="text" class="input" disabled value="100.0000" />
+				</div>
+				<div class="input-group un-border-group">
+					<span class="input-group-addon pd0 len-5 tr f-Gray">
+						当前价格：
+					</span>
+					<input type="text" class="input" disabled value="1.3253"/>
+				</div>
+				<div class="input-group un-border-group">
+					<span class="input-group-addon pd0 len-5 tr f-Gray">
+						数量：
+					</span>
+					<input type="text" id="test" class="input border-b" placeholder="请输入数量" oninput="checkInt.call(this,100)" />
+				</div>
+				<div class="mb10">
+					<p class=" pd0 len-5 tr f-Gray odd-tit ">
+						线下收款：
+					</p>
+					<div class="passwordDiv">
+				        <label for="ipt" class="passwordLabel">
+				            <ul class="clearfix">
+				               <li></li><li></li><li></li><li></li><li></li><li></li>
+				            </ul>
+				        </label>
+				        <input type="password" id="password" name="password" maxlength="6" >
+				    </div>
+				</div>
+				<button type="submit" id="buysubmit" class="hidden">提交</button>
+			</form>
+		`
+		$(".btn-buyOrder").on("click",function(){
+			var targetName = $(this).parents(".trade-list-item").find(".layout-name").text();
+			layer.open({
+			  type: 1
+			  ,skin: 'layui-layer-molv'
+			  ,title: "向[ "+targetName+" ]买入ATS"
+			  ,area: '300px;'
+			  ,offset: 'center' //具体配置参考：offset参数项
+			  ,content: layerCont
+			  ,btn: '确认收款'
+			  ,btnAlign: 'c' //按钮居中
+			  ,shade: 0.5 //不显示遮罩
+			  ,yes: function(){
+			  	if($("#test").val()){
+			  		$("#buysubmit").trigger("click");
+				  	layer.closeAll();
+				    layer.msg("交易成功");
+			  	}else{
+			  		alert('a')
+			  	}
+
+			  }
+			});
+		})
+		
+		//数量
+		function checkInt(max){
+			var val = this.value;
+			this.value = val.replace(/[^\d]/g,'');
+			val > max ? this.value = 100.0000 :'';
+		}
+		//密码框输入事件
+        $('.passwordDiv input').on('input', function(e) {
+            var number = 6;
+            var pw = $("input[name = 'password']").val();
+            var list = $('.passwordDiv ul li');
+            for(var i = 0; i < number; i++) {
+                if(pw[i]) {
+                    $(list[i]).text('•');
+                } else {
+                    $(list[i]).text('');
+                };
+            };
+        });
+        //点击密码框清除密码
+        $('.passwordDiv ul').click(function() {
+            $("input[name = 'password']").val('');
+            $('#password').focus();
+            $('.passwordDiv ul li').text('')
+        });
+	</script>
+	<script src="asset/highcharts/asset/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="asset/highcharts/js/highcharts.js" type="text/javascript" charset="utf-8"></script>
+	<script src="asset/highcharts/js/oldie.js" type="text/javascript" charset="utf-8"></script>
+	<script src="asset/highcharts/js/highcharts-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var data1 = [
+[Date.UTC(2013,5,6),0.7549],
+[Date.UTC(2013,5,7),0.7562],
+[Date.UTC(2013,5,9),0.7574],
+[Date.UTC(2013,5,10),0.7543],
+[Date.UTC(2013,5,11),0.7510],
+[Date.UTC(2013,5,12),0.7498],
+[Date.UTC(2013,5,13),0.7477],
+[Date.UTC(2013,5,14),0.7492],
+[Date.UTC(2013,5,16),0.7487],
+[Date.UTC(2013,5,17),0.7480],
+[Date.UTC(2013,5,18),0.7466],
+[Date.UTC(2013,5,19),0.7521],
+[Date.UTC(2013,5,20),0.7564],
+[Date.UTC(2013,5,21),0.7621],
+[Date.UTC(2013,5,23),0.7630],
+[Date.UTC(2013,5,24),0.7623],
+[Date.UTC(2013,5,25),0.7644],
+[Date.UTC(2013,5,26),0.7685],
+[Date.UTC(2013,5,27),0.7671],
+[Date.UTC(2013,5,28),0.7687],
+[Date.UTC(2013,5,30),0.7687],
+[Date.UTC(2013,6,1),0.7654],
+[Date.UTC(2013,6,2),0.7705],
+[Date.UTC(2013,6,3),0.7687],
+[Date.UTC(2013,6,4),0.7744],
+[Date.UTC(2013,6,5),0.7793],
+[Date.UTC(2013,6,7),0.7804],
+[Date.UTC(2013,6,8),0.7770],
+[Date.UTC(2013,6,9),0.7824],
+[Date.UTC(2013,6,10),0.7705],
+[Date.UTC(2013,6,11),0.7635],
+[Date.UTC(2013,6,12),0.7652],
+[Date.UTC(2013,6,14),0.7656],
+[Date.UTC(2013,6,15),0.7655],
+[Date.UTC(2013,6,16),0.7598],
+[Date.UTC(2013,6,17),0.7619],
+[Date.UTC(2013,6,18),0.7628],
+[Date.UTC(2013,6,19),0.7609],
+[Date.UTC(2013,6,21),0.7599],
+[Date.UTC(2013,6,22),0.7584],
+[Date.UTC(2013,6,23),0.7562],
+[Date.UTC(2013,6,24),0.7575],
+[Date.UTC(2013,6,25),0.7531],
+[Date.UTC(2013,6,26),0.7530],
+[Date.UTC(2013,6,28),0.7526],
+[Date.UTC(2013,6,29),0.7540],
+[Date.UTC(2013,6,30),0.7540],
+[Date.UTC(2013,6,31),0.7518],
+[Date.UTC(2013,7,1),0.7571],
+[Date.UTC(2013,7,2),0.7529],
+[Date.UTC(2013,7,4),0.7532],
+[Date.UTC(2013,7,5),0.7542],
+[Date.UTC(2013,7,6),0.7515],
+[Date.UTC(2013,7,7),0.7498],
+[Date.UTC(2013,7,8),0.7473],
+[Date.UTC(2013,7,9),0.7494],
+[Date.UTC(2013,7,11),0.7497],
+[Date.UTC(2013,7,12),0.7519],
+[Date.UTC(2013,7,13),0.7540],
+[Date.UTC(2013,7,14),0.7543],
+[Date.UTC(2013,7,15),0.7492],
+[Date.UTC(2013,7,16),0.7502],
+[Date.UTC(2013,7,18),0.7503],
+[Date.UTC(2013,7,19),0.7499],
+[Date.UTC(2013,7,20),0.7453],
+[Date.UTC(2013,7,21),0.7487],
+[Date.UTC(2013,7,22),0.7487],
+[Date.UTC(2013,7,23),0.7472],
+[Date.UTC(2013,7,25),0.7471],
+[Date.UTC(2013,7,26),0.7480],
+[Date.UTC(2013,7,27),0.7467],
+[Date.UTC(2013,7,28),0.7497],
+[Date.UTC(2013,7,29),0.7552],
+[Date.UTC(2013,7,30),0.7562],
+[Date.UTC(2013,8,1),0.7572],
+[Date.UTC(2013,8,2),0.7581],
+[Date.UTC(2013,8,3),0.7593],
+[Date.UTC(2013,8,4),0.7571],
+[Date.UTC(2013,8,5),0.7622],
+[Date.UTC(2013,8,6),0.7588],
+[Date.UTC(2013,8,8),0.7591],
+[Date.UTC(2013,8,9),0.7544],
+[Date.UTC(2013,8,10),0.7537],
+[Date.UTC(2013,8,11),0.7512],
+[Date.UTC(2013,8,12),0.7519],
+[Date.UTC(2013,8,13),0.7522],
+[Date.UTC(2013,8,15),0.7486],
+[Date.UTC(2013,8,16),0.7500],
+[Date.UTC(2013,8,17),0.7486],
+[Date.UTC(2013,8,18),0.7396],
+[Date.UTC(2013,8,19),0.7391],
+[Date.UTC(2013,8,20),0.7394],
+[Date.UTC(2013,8,22),0.7389],
+[Date.UTC(2013,8,23),0.7411],
+[Date.UTC(2013,8,24),0.7422],
+[Date.UTC(2013,8,25),0.7393],
+[Date.UTC(2013,8,26),0.7413],
+[Date.UTC(2013,8,27),0.7396],
+					];
+		var data2 = [
+[Date.UTC(2013,5,6),0.7549],
+[Date.UTC(2013,5,7),0.7562],
+[Date.UTC(2013,5,9),0.7574],
+[Date.UTC(2013,5,10),0.7543],
+[Date.UTC(2013,5,11),0.7510],
+[Date.UTC(2013,5,12),0.7498],
+[Date.UTC(2013,5,13),0.7477],
+[Date.UTC(2013,5,14),0.7492],
+[Date.UTC(2013,5,16),0.7487],
+[Date.UTC(2013,5,17),0.7480],
+[Date.UTC(2013,5,18),0.7466],
+[Date.UTC(2013,5,19),0.7521],
+[Date.UTC(2013,5,20),0.7564],
+[Date.UTC(2013,5,21),0.7621],
+[Date.UTC(2013,5,23),0.7630],
+[Date.UTC(2013,5,24),0.7623],
+[Date.UTC(2013,5,25),0.7644],
+[Date.UTC(2013,5,26),0.7685],
+[Date.UTC(2013,5,27),0.7671],
+[Date.UTC(2013,5,28),0.7687],
+[Date.UTC(2013,5,30),0.7687],
+[Date.UTC(2013,6,1),0.7654],
+[Date.UTC(2013,6,2),0.7705],
+[Date.UTC(2013,6,3),0.7687],
+[Date.UTC(2013,6,4),0.7744],
+[Date.UTC(2013,6,5),0.7793],
+[Date.UTC(2013,6,7),0.7804],
+[Date.UTC(2013,6,8),0.7770],
+[Date.UTC(2013,6,9),0.7824],
+[Date.UTC(2013,6,10),0.7705],
+[Date.UTC(2013,6,11),0.7635],
+[Date.UTC(2013,6,12),0.7652],
+[Date.UTC(2013,6,14),0.7656],
+[Date.UTC(2013,6,15),0.7655],
+[Date.UTC(2013,6,16),0.7598],
+[Date.UTC(2013,6,17),0.7619],
+[Date.UTC(2013,6,18),0.7628],
+[Date.UTC(2013,6,19),0.7609],
+[Date.UTC(2013,6,21),0.7599],
+[Date.UTC(2013,6,22),0.7584],
+[Date.UTC(2013,6,23),0.7562],
+[Date.UTC(2013,6,24),0.7575],
+[Date.UTC(2013,6,25),0.7531],
+[Date.UTC(2013,6,26),0.7530],
+[Date.UTC(2013,6,28),0.7526],
+[Date.UTC(2013,6,29),0.7540],
+[Date.UTC(2013,6,30),0.7540],
+[Date.UTC(2013,6,31),0.7518],
+[Date.UTC(2013,7,1),0.7571],
+[Date.UTC(2013,7,2),0.7529],
+[Date.UTC(2013,7,4),0.7532],
+[Date.UTC(2013,7,5),0.7542],
+[Date.UTC(2013,7,6),0.7515],
+[Date.UTC(2013,7,7),0.7498],
+[Date.UTC(2013,7,8),0.7473],
+[Date.UTC(2013,7,9),0.7494],
+[Date.UTC(2013,7,11),0.7497],
+[Date.UTC(2013,7,12),0.7519],
+[Date.UTC(2013,7,13),0.7540],
+[Date.UTC(2013,7,14),0.7543],
+[Date.UTC(2013,7,15),0.7492],
+[Date.UTC(2013,7,16),0.7502],
+[Date.UTC(2013,7,18),0.7503],
+[Date.UTC(2013,7,19),0.7499],
+[Date.UTC(2013,7,20),0.7453],
+[Date.UTC(2013,7,21),0.7487],
+[Date.UTC(2013,7,22),0.7487],
+[Date.UTC(2013,7,23),0.7472],
+[Date.UTC(2013,7,25),0.7471],
+[Date.UTC(2013,7,26),0.7480],
+[Date.UTC(2013,7,27),0.7467],
+[Date.UTC(2013,7,28),0.7497],
+[Date.UTC(2013,7,29),0.7552],
+[Date.UTC(2013,7,30),0.7562],
+[Date.UTC(2013,8,1),0.7572],
+[Date.UTC(2013,8,2),0.7581],
+[Date.UTC(2013,8,3),0.7593],
+[Date.UTC(2013,8,4),0.7571],
+[Date.UTC(2013,8,5),0.7622],
+[Date.UTC(2013,8,6),0.7588],
+[Date.UTC(2013,8,8),0.7591],
+[Date.UTC(2013,8,9),0.7544],
+[Date.UTC(2013,8,10),0.7537],
+[Date.UTC(2013,8,11),0.7512],
+[Date.UTC(2013,8,12),0.7519],
+[Date.UTC(2013,8,13),0.7522],
+[Date.UTC(2013,8,15),0.7486],
+[Date.UTC(2013,8,16),0.7500],
+[Date.UTC(2013,8,17),0.7486],
+[Date.UTC(2013,8,18),0.7600],
+[Date.UTC(2013,8,19),0.7391],
+[Date.UTC(2013,8,20),0.7394],
+[Date.UTC(2013,8,22),0.7389],
+[Date.UTC(2013,8,23),0.7411],
+[Date.UTC(2013,8,24),0.7422],
+[Date.UTC(2013,8,25),0.7393],
+[Date.UTC(2013,8,26),0.7413],
+[Date.UTC(2013,8,27),0.7396],
+					];
+			var data3 = [
+[Date.UTC(2013,5,6),0.7549],
+[Date.UTC(2013,5,7),0.7562],
+[Date.UTC(2013,5,9),0.7574],
+[Date.UTC(2013,5,10),0.7543],
+[Date.UTC(2013,5,11),0.7510],
+[Date.UTC(2013,5,12),0.7498],
+[Date.UTC(2013,5,13),0.7477],
+[Date.UTC(2013,5,14),0.7492],
+[Date.UTC(2013,5,16),0.7487],
+[Date.UTC(2013,5,17),0.7480],
+[Date.UTC(2013,5,18),0.7466],
+[Date.UTC(2013,5,19),0.7800],
+[Date.UTC(2013,5,20),0.7564],
+[Date.UTC(2013,5,21),0.7621],
+[Date.UTC(2013,5,23),0.7630],
+[Date.UTC(2013,5,24),0.7623],
+[Date.UTC(2013,5,25),0.7644],
+[Date.UTC(2013,5,26),0.7685],
+[Date.UTC(2013,5,27),0.7671],
+[Date.UTC(2013,5,28),0.7687],
+[Date.UTC(2013,5,30),0.7687],
+[Date.UTC(2013,6,1),0.7654],
+[Date.UTC(2013,6,2),0.7705],
+[Date.UTC(2013,6,3),0.7687],
+[Date.UTC(2013,6,4),0.7744],
+[Date.UTC(2013,6,5),0.7793],
+[Date.UTC(2013,6,7),0.7804],
+[Date.UTC(2013,6,8),0.7770],
+[Date.UTC(2013,6,9),0.7824],
+[Date.UTC(2013,6,10),0.7705],
+[Date.UTC(2013,6,11),0.7635],
+[Date.UTC(2013,6,12),0.7652],
+[Date.UTC(2013,6,14),0.7656],
+[Date.UTC(2013,6,15),0.7655],
+[Date.UTC(2013,6,16),0.7598],
+[Date.UTC(2013,6,17),0.7619],
+[Date.UTC(2013,6,18),0.7628],
+[Date.UTC(2013,6,19),0.7609],
+[Date.UTC(2013,6,21),0.7599],
+[Date.UTC(2013,6,22),0.7584],
+[Date.UTC(2013,6,23),0.7562],
+[Date.UTC(2013,6,24),0.7575],
+[Date.UTC(2013,6,25),0.7531],
+[Date.UTC(2013,6,26),0.7530],
+[Date.UTC(2013,6,28),0.7526],
+[Date.UTC(2013,6,29),0.7540],
+[Date.UTC(2013,6,30),0.7540],
+[Date.UTC(2013,6,31),0.7518],
+[Date.UTC(2013,7,1),0.7571],
+[Date.UTC(2013,7,2),0.7529],
+[Date.UTC(2013,7,4),0.7532],
+[Date.UTC(2013,7,5),0.7542],
+[Date.UTC(2013,7,6),0.7515],
+[Date.UTC(2013,7,7),0.7498],
+[Date.UTC(2013,7,8),0.7473],
+[Date.UTC(2013,7,9),0.7494],
+[Date.UTC(2013,7,11),0.7497],
+[Date.UTC(2013,7,12),0.7519],
+[Date.UTC(2013,7,13),0.7540],
+[Date.UTC(2013,7,14),0.7543],
+[Date.UTC(2013,7,15),0.7492],
+[Date.UTC(2013,7,16),0.7502],
+[Date.UTC(2013,7,18),0.7503],
+[Date.UTC(2013,7,19),0.7499],
+[Date.UTC(2013,7,20),0.7453],
+[Date.UTC(2013,7,21),0.7487],
+[Date.UTC(2013,7,22),0.7487],
+[Date.UTC(2013,7,23),0.7472],
+[Date.UTC(2013,7,25),0.7471],
+[Date.UTC(2013,7,26),0.7480],
+[Date.UTC(2013,7,27),0.7467],
+[Date.UTC(2013,7,28),0.7497],
+[Date.UTC(2013,7,29),0.7552],
+[Date.UTC(2013,7,30),0.7562],
+[Date.UTC(2013,8,1),0.7572],
+[Date.UTC(2013,8,2),0.7581],
+[Date.UTC(2013,8,3),0.7593],
+[Date.UTC(2013,8,4),0.7571],
+[Date.UTC(2013,8,5),0.7622],
+[Date.UTC(2013,8,6),0.7588],
+[Date.UTC(2013,8,8),0.7591],
+[Date.UTC(2013,8,9),0.7544],
+[Date.UTC(2013,8,10),0.7537],
+[Date.UTC(2013,8,11),0.7512],
+[Date.UTC(2013,8,12),0.7519],
+[Date.UTC(2013,8,13),0.7522],
+[Date.UTC(2013,8,15),0.7486],
+[Date.UTC(2013,8,16),0.7500],
+[Date.UTC(2013,8,17),0.7486],
+[Date.UTC(2013,8,18),0.7396],
+[Date.UTC(2013,8,19),0.7391],
+[Date.UTC(2013,8,20),0.7394],
+[Date.UTC(2013,8,22),0.7389],
+[Date.UTC(2013,8,23),0.7411],
+[Date.UTC(2013,8,24),0.7422],
+[Date.UTC(2013,8,25),0.7393],
+[Date.UTC(2013,8,26),0.7413],
+[Date.UTC(2013,8,27),0.7396],
+					];
+		$.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback=?', function (data) {
+			var chart = Highcharts.chart('container1', {
+		        chart: {
+		            zoomType: 'x',
+		            marginBottom:20,
+		            marginTop:40
+		        },
+		        title: {
+		            text: ''
+		        },
+		      
+		        xAxis: {
+		            type: 'datetime',
+		            dateTimeLabelFormats: {
+		                millisecond: '%H:%M:%S.%L',
+		                second: '%H:%M:%S',
+		                minute: '%H:%M',
+		                hour: '%H:%M',
+		                day: '%m-%d',
+		                week: '%m-%d',
+		                month: '%Y-%m',
+		                year: '%Y'
+		            }
+		        },
+		        credits:{//右下角的文本  
+		            enabled: false 
+		        },
+		        tooltip: {
+		            dateTimeLabelFormats: {
+		                millisecond: '%H:%M:%S.%L',
+		                second: '%H:%M:%S',
+		                minute: '%H:%M',
+		                hour: '%H:%M',
+		                day: '%Y-%m-%d',
+		                week: '%m-%d',
+		                month: '%Y-%m',
+		                year: '%Y'
+		            },
+		            backgroundColor: '#FCFFC5',   // 背景颜色          
+				    borderColor: '#f78100',         // 边框颜色
+				    animation: true ,              // 是否启用动画效果
+				    style: {                      // 文字内容相关样式
+				        color: "#f78100",
+				        fontSize: "12px",
+				        fontWeight: "blod",
+				        fontFamily: "Courir new"
+				    }
+		        },
+		        yAxis: {
+		            title: {
+		                text: ''
+		            }
+		        },
+		        legend: {
+		            enabled: false
+		        },
+		        plotOptions: {
+		            spline: {
+		                lineColor:'#4c8bee',
+		                marker: {
+		                    radius: 1,
+		                    color:'4c8bee'
+		                },
+
+		                lineWidth: 2,
+		                states: {
+		                    hover: {
+		                        lineWidth: 3
+		                    }
+		                },
+		                threshold: null
+		            }
+		        },
+		       
+		       	series: [{
+		       		marker:{
+			       		fillColor:"#4cee89"
+			       	},
+		            type: 'spline',
+		            name: 'ATS',
+		            data: data1 
+		        }]
+		    });
+		});
+		$.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback=?', function (data) {
+			var chart = Highcharts.chart('container2', {
+		        chart: {
+		            zoomType: 'x',
+		            marginBottom:20,
+		            marginTop:40
+		        },
+		        title: {
+		            text: ''
+		        },
+		      
+		        xAxis: {
+		            type: 'datetime',
+		            dateTimeLabelFormats: {
+		                millisecond: '%H:%M:%S.%L',
+		                second: '%H:%M:%S',
+		                minute: '%H:%M',
+		                hour: '%H:%M',
+		                day: '%m-%d',
+		                week: '%m-%d',
+		                month: '%Y-%m',
+		                year: '%Y'
+		            }
+		        },
+		        credits:{//右下角的文本  
+		            enabled: false 
+		        },
+		        tooltip: {
+		            dateTimeLabelFormats: {
+		                millisecond: '%H:%M:%S.%L',
+		                second: '%H:%M:%S',
+		                minute: '%H:%M',
+		                hour: '%H:%M',
+		                day: '%Y-%m-%d',
+		                week: '%m-%d',
+		                month: '%Y-%m',
+		                year: '%Y'
+		            },
+		            backgroundColor: '#FCFFC5',   // 背景颜色          
+				    borderColor: '#f78100',         // 边框颜色
+				    animation: true ,              // 是否启用动画效果
+				    style: {                      // 文字内容相关样式
+				        color: "#f78100",
+				        fontSize: "12px",
+				        fontWeight: "blod",
+				        fontFamily: "Courir new"
+				    }
+		        },
+		        yAxis: {
+		            title: {
+		                text: ''
+		            }
+		        },
+		        legend: {
+		            enabled: false
+		        },
+		        plotOptions: {
+		            spline: {
+		                lineColor:'#4c8bee',
+		                marker: {
+		                    radius: 1,
+		                    color:'4c8bee'
+		                },
+
+		                lineWidth: 2,
+		                states: {
+		                    hover: {
+		                        lineWidth: 3
+		                    }
+		                },
+		                threshold: null
+		            }
+		        },
+		       
+		       	series: [{
+		       		marker:{
+			       		fillColor:"#4cee89"
+			       	},
+		            type: 'spline',
+		            name: 'ATS',
+		            data: data2 
+		        }]
+		    });
+		});
+		$.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback=?', function (data) {
+			var chart = Highcharts.chart('container3', {
+		        chart: {
+		            zoomType: 'x',
+		            marginBottom:20,
+		            marginTop:40
+		        },
+		        title: {
+		            text: ''
+		        },
+		      
+		        xAxis: {
+		            type: 'datetime',
+		            dateTimeLabelFormats: {
+		                millisecond: '%H:%M:%S.%L',
+		                second: '%H:%M:%S',
+		                minute: '%H:%M',
+		                hour: '%H:%M',
+		                day: '%m-%d',
+		                week: '%m-%d',
+		                month: '%Y-%m',
+		                year: '%Y'
+		            }
+		        },
+		        credits:{//右下角的文本  
+		            enabled: false 
+		        },
+		        tooltip: {
+		            dateTimeLabelFormats: {
+		                millisecond: '%H:%M:%S.%L',
+		                second: '%H:%M:%S',
+		                minute: '%H:%M',
+		                hour: '%H:%M',
+		                day: '%Y-%m-%d',
+		                week: '%m-%d',
+		                month: '%Y-%m',
+		                year: '%Y'
+		            },
+		            backgroundColor: '#FCFFC5',   // 背景颜色          
+				    borderColor: '#f78100',         // 边框颜色
+				    animation: true ,              // 是否启用动画效果
+				    style: {                      // 文字内容相关样式
+				        color: "#f78100",
+				        fontSize: "12px",
+				        fontWeight: "blod",
+				        fontFamily: "Courir new"
+				    }
+		        },
+		        yAxis: {
+		            title: {
+		                text: ''
+		            }
+		        },
+		        legend: {
+		            enabled: false
+		        },
+		        plotOptions: {
+		            spline: {
+		                lineColor:'#4c8bee',
+		                marker: {
+		                    radius: 1,
+		                    color:'4c8bee'
+		                },
+
+		                lineWidth: 2,
+		                states: {
+		                    hover: {
+		                        lineWidth: 3
+		                    }
+		                },
+		                threshold: null
+		            }
+		        },
+		       
+		       	series: [{
+		       		marker:{
+			       		fillColor:"#4cee89"
+			       	},
+		            type: 'spline',
+		            name: 'ATS',
+		            data: data3 
+		        }]
+		    });
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<script src="asset/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="lp-header bg-theme">
+		<a class="lp-back fa fa-angle-left fl"></a>
+		<h1 class="title">数字资产</h1>
+	</div>
+	<div class="lp-content ">
+		<div class="person-box bg-theme pt50 pb15 ">
+			<div class="person-avatar mb10">
+				<img src="img/logo.png" alt="" class="person-img" />
+				<div class="person-text pt10">
+					<p class="ellipsis">小刘真的帅</p>
+					<p class="ellipsis">1800000000</p>
+				</div>
+			</div>
+		</div>
+		<div class="mb10 section-o">
+			<div class="flex-justify pd10">
+				<div class="input-group">
+					<input type="text" class="input" value="TjpHX2ZajkWSjBDLQLZM8GjgvaoRCzQpJq" id="foo" />
+					<div class="input-group-btn">
+						<button class="btn btn-black btn-copy" type="button" data-clipboard-action="copy" data-clipboard-target="#foo">复制地址</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mg10 radius-4 section">
+			<div class="flex tc bg-darkWhite pd10">
+				<div class="flex-item ">
+					<p class="ellipsis"><span class="f-pink mr5">ATS</span>199.1162</p>
+				</div>
+				<div class="flex-item">
+					<p class="ellipsis"><span class="f-blue mr5">ATS</span>199.1162</p>
+				</div>
+			</div>
+			<div class="pcol15 prow30 flex-justify">
+				<a href="chart.html" class="btn btn-pink prow30">现金交易</a>
+				<a href="chart.html" class="btn btn-blue prow30">E P 交易</a>
+			</div>
+		</div>
+		<div class="mg10 radius-4 section">
+			<div class="flex tc bg-darkWhite pd10">
+				<div class="flex-item ">
+					<p class="ellipsis"><span class=" f-theme">EP</span></p>
+				</div>
+				<div class="flex-item">
+					<p class="ellipsis"><span class="f-theme mr5">当前价格</span>1.1162</p>
+				</div>
+			</div>
+			<div class="pcol15 prow30 tc">
+				<a href="chart.html" class="btn btn-theme fill-block">现金交易</a>
+			</div>
+		</div>
+	</div>
+	<script src="asset/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var clipboard = new ClipboardJS('.btn-copy');
+	
+	    clipboard.on('success', function(e) {
+	        console.log(e);
+	    });
+	
+	    clipboard.on('error', function(e) {
+	        console.log(e);
+	    });
+	</script>
+</body>
+</html>

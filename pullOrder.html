@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<script src="asset/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="lp-header bg-theme">
+		<a class="lp-back fa fa-angle-left fl"></a>
+		<h1 class="title">发布购买订单</h1>
+	</div>
+	<div class="lp-content ">
+		<div class="bg-theme chart-header pb70">
+			<div class="flex pcol10">
+				<div class="flex-item">
+					<p class="ellipsis">111.5600</p>
+					<p class="ellipsis">ATS</p>
+				</div>
+				<div class="flex-item">
+					<p class="ellipsis">111.5600</p>
+					<p class="ellipsis">EP</p>
+				</div>
+			</div>
+		</div>	
+		<div class="mt-70">
+			<div class="lp-card section-o">
+				<div class="pd20">
+					<form action="" class="pushOrder-form">
+						<p class="ellipsis row">当前价格：<span class="f-pink" id="pirceOrigin">1.339</span></p>
+						<div class=" flex-justify ">
+							<p class="ellipsis row">购买价格：<span id="pirceEnd">1.339</span></p>
+							<div class=" range-group">
+								<p class="ellipsis tc range-top"><span class="range-result">0</span>%</p>
+								<div class="flex-justify">
+									<button class="btn btn-range" type="button" range-type="btn-min">-</button>
+									<input class="range" type="range" maxlength="100" value="0" />
+									<button class="btn btn-range" type="button" range-type="btn-add">+</button>
+								</div>
+							</div>
+						</div>
+						<div class="input-group  un-border-group row">
+							<span class="input-group-addon pd0"  >
+								购买数量
+							</span>
+							<input type="text" class="input" placeholder="输入购买数量" id="pirceNum" />
+						</div>
+						<p class="ellipsis row" >购买总额：<span id="pirceCount">0.0000</span></p>
+						<div class="mt50 mb20">
+							<button class="btn btn-theme fill-block">确认发布</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var oPirceEnd = $("#pirceEnd"),
+			oPirceCount = $("#pirceCount"),
+			oPirceOrigin = $("#pirceOrigin"),
+			oPirceNum = $("#pirceNum"),
+			pirceFlag = 5; 
+			
+		$(".btn-range").on("click", function () {
+			var range = $(this).parents(".range-group").find(".range");
+			var result = $(this).parents(".range-group").find(".range-result");
+			var value = range.val();
+			var type = $(this).attr("range-type");
+			value = parseInt(value);
+			if(type == "btn-add"){
+				range.val(value + pirceFlag);
+			}else{
+				range.val(value - pirceFlag);
+			}
+			range.trigger('change');
+		})
+		
+		$(".range").on("change",function () {
+			var result = $(this).parents(".range-group").find(".range-result");
+			result.text($(this).val());
+			getPrice.call($(this));
+			getCount();
+		})
+		
+		function getPrice() {
+			var pirceOrigin = oPirceOrigin.text();
+			var ratio = $(this).val() * 0.01 + 1;
+			oPirceEnd.text((pirceOrigin * ratio).toFixed(4)) ;
+		}
+		
+		function getCount() {
+			var pirceNum = oPirceNum.val();
+			var pirceEnd = oPirceEnd.text();
+			oPirceCount.text((pirceEnd * pirceNum).toFixed(4));
+		}
+		oPirceNum.on("input",getCount);
+	</script>
+</body>
+</html>
